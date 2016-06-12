@@ -40,21 +40,21 @@ namespace StockQuotes_API
    //   }
    //}
    
-   public class YahooQuoteJsonData
+   public class YQuoteJsonData
    {
       [JsonProperty("list")]
-      public ListData ListData;
+      public YListData ListData;
    }
 
-   public class ListData
+   public class YListData
    {
       [JsonProperty("meta")]
-      public MetaData MetaData;
+      public YMetaData MetaData;
       [JsonProperty("resources")]
-      public List<ResourceListData> Resources;
+      public List<YResourceListData> Resources;
    }
 
-   public class MetaData
+   public class YMetaData
    {
       [JsonProperty("type")]
       public string Type;
@@ -64,21 +64,21 @@ namespace StockQuotes_API
       public int Count;
    }
 
-   public class ResourceListData
+   public class YResourceListData
    {
       [JsonProperty("resource")]
-      public ResourceData Resources;
+      public YResourceData Resources;
    }
 
-   public class ResourceData
+   public class YResourceData
    {
       [JsonProperty("classname")]
       public string ClassName;
       [JsonProperty("fields")]
-      public FieldData Fields;
+      public YFieldData Fields;
    }
 
-   public class FieldData
+   public class YFieldData
    {
       [JsonProperty("name")]
       public string Name;
@@ -98,10 +98,10 @@ namespace StockQuotes_API
 
    public class YahooQuoteJsonParser
    {
-      private YahooQuoteJsonData _data = null;
+      private YQuoteJsonData _data = null;
       public YahooQuoteJsonParser(string data)
       {
-         _data = JsonConvert.DeserializeObject<YahooQuoteJsonData>(data);
+         _data = JsonConvert.DeserializeObject<YQuoteJsonData>(data);
       }
 
 
