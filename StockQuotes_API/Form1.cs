@@ -19,8 +19,13 @@ namespace StockQuotes_API
 
       private void _btn_Ok_Click(object sender, EventArgs e)
       {
-         YahooStockApi api = new YahooStockApi();
+         // As of 2016/9/11, the yahoo stock api didn't work any more...
+         //YahooStockApi api = new YahooStockApi();
+         //string response = api.GetQuote("amba");
+
+         GoogleStockApi api = new GoogleStockApi();
          string response = api.GetQuote("amba");
+
       }
    }
 }
